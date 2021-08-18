@@ -19,6 +19,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.indigo,
         leading: Icon(Icons.menu),
         actions: [
           IconButton(
@@ -44,7 +45,7 @@ class MyHomePage extends StatelessWidget {
             clipBehavior: Clip.antiAliasWithSaveLayer,
             child: Stack(
               children: [Container(
-                color: Colors.blue,
+                color: Colors.indigo,
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
@@ -60,23 +61,38 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Expanded(child: Text(' '),),
+                          SizedBox(width: 115.0,),
                           Expanded(child: Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadiusDirectional.all(Radius.circular(14.0),),
+                              borderRadius: BorderRadiusDirectional.all(Radius.circular(20.0),),
                             ),
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             child: Stack(
                               children: [Container(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 4.0,
+                                ),
                                 color: Colors.white,
                                 child: Row(
                                   children: [
-                                    Image(
-                                      image: NetworkImage(
-                                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQatgg0tQvmmQy2zoPOsjhacb0KRi1psv4DOfVsGcyEEf3frT_lfjjuYrv_uui4cTLjcNY&usqp=CAU',),
-                                        width: 30.0,
-                                        height: 30.0,
-                                        ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadiusDirectional.all(Radius.circular(30.0),),
+                                      ),
+                                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                                      child: Stack(
+                                        children: [
+                                          Image(
+                                            image: NetworkImage(
+                                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQatgg0tQvmmQy2zoPOsjhacb0KRi1psv4DOfVsGcyEEf3frT_lfjjuYrv_uui4cTLjcNY&usqp=CAU',),
+                                              width: 30.0,
+                                              height: 30.0,
+                                              fit: BoxFit.cover,
+                                              ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(width: 8.0,),
                                     Text(
                                       'USA',
                                       style: TextStyle(
@@ -99,12 +115,8 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Container(
-                        padding: EdgeInsetsDirectional.only(
-                          top: 20.0,
-                          bottom: 10.0,
-                        ),
-                        child: Text(
+                      SizedBox(height: 20.0,),
+                      Text(
                         'Are you feeling sick?',
                         style: TextStyle(
                         fontSize: 18.0,
@@ -112,7 +124,7 @@ class MyHomePage extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         ),
                         ),
-                      ),
+                      SizedBox(height:10.0,),
                       Text(
                         'if you feel sick with any of covid-19 symptomps',
                         style: TextStyle(
@@ -137,7 +149,7 @@ class MyHomePage extends StatelessWidget {
                               Expanded(
                                 child: Container(
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadiusDirectional.all(Radius.circular(14.0),),
+                                      borderRadius: BorderRadiusDirectional.all(Radius.circular(17.0),),
                                     ),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     child: Stack(
@@ -145,55 +157,58 @@ class MyHomePage extends StatelessWidget {
                                         Container(
                                           padding: EdgeInsets.symmetric(
                                             vertical: 8.0,
-                                            horizontal: 25.0,
                                           ),
-                                          color: Colors.red,
+                                          color: Colors.red[500],
                                           child: Row(
                                             children: [Icon(
                                               Icons.call,
                                               color: Colors.white,
                                             ),
+                                              SizedBox(width: 10.0,),
                                               Text(
-                                                'Call us',
+                                                'Call Now',
                                                 style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 15.0,
+                                                  fontSize: 14.0,
                                                 ),
                                               ),
                                             ],
+                                            mainAxisAlignment: MainAxisAlignment.center,
                                           ),
                                         ),
                                       ],
                                     ),
                                   ),
                               ),
-                              Text('   '),
+                              SizedBox(width: 20.0,),
                               Expanded(
                                 child: Container(
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadiusDirectional.all(Radius.circular(14.0),),
+                                      borderRadius: BorderRadiusDirectional.all(Radius.circular(17.0),),
                                     ),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     child: Stack(
                                       children: [Container(
                                         padding: EdgeInsets.symmetric(
                                           vertical: 8.0,
-                                          horizontal: 25.0,
                                         ),
-                                        color: Colors.lightBlue,
+                                        color: Colors.blue,
                                         child: Row(
-                                          children: [Icon(
+                                          children: [
+                                            Icon(
                                             Icons.sms_sharp,
                                             color: Colors.white,
                                           ),
+                                            SizedBox(width: 10.0,),
                                             Text(
-                                              'send sms',
+                                              'Send SMS',
                                               style: TextStyle(
-                                                fontSize: 15.0,
+                                                fontSize: 14.0,
                                                 color: Colors.white,
                                               ),
                                             ),
                                           ],
+                                          mainAxisAlignment: MainAxisAlignment.center,
                                         ),
                                       ),
                                       ],
@@ -215,20 +230,16 @@ class MyHomePage extends StatelessWidget {
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
-                  Text(
-                    'Prevention',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                      fontSize: 20.0,
+                    Text(
+                      'Prevention',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                        fontSize: 20.0,
+                      ),
                     ),
-                  ),
-                  Container(
-                    padding: EdgeInsetsDirectional.only(
-                      top: 10.0,
-                      bottom: 20.0,
-                    ),
-                    child: Row(
+                    SizedBox(height: 15.0,),
+                    Row(
                       children: [
                         Expanded(
                           child: Column(
@@ -248,6 +259,7 @@ class MyHomePage extends StatelessWidget {
                             ],
                           ),
                         ),
+                        SizedBox(width: 15.0,),
                         Expanded(
                           child: Column(
                             children: [
@@ -264,6 +276,7 @@ class MyHomePage extends StatelessWidget {
                             ],
                           ),
                         ),
+                        SizedBox(width: 15.0,),
                         Expanded(
                           child: Column(
                             children: [Image(image: NetworkImage('https://static.wixstatic.com/media/8bac08_77f3d3b2612946ccbdd37db8bf7b0bd2~mv2.png/v1/fill/w_560,h_560,al_c,q_85,usm_0.66_1.00_0.01/facemask.webp',
@@ -282,11 +295,48 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ),
-                  Image(image: NetworkImage(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4WbL9HD8TxhKiRGuIylTo7IMKh8F36_-t8g&usqp=CAU',
-                  ),
-                  ),
+                    SizedBox(height: 40.0,),
+                    Stack(
+                      overflow: Overflow.visible,
+                      children: [
+                        Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadiusDirectional.circular(20.0),
+                            ),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                          child: Stack(
+                            children: [Container(
+                              decoration: BoxDecoration(
+                                color: Colors.indigo,
+                              ),
+                              width: double.infinity,
+                              alignment: Alignment.topRight,
+                              child:  Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Column(
+                                  children: [
+                                    Text('   Do your own test!',style: TextStyle(color: Colors.white,fontSize: 20.0,fontWeight: FontWeight.bold),),
+                                    SizedBox(height: 10.0,),
+                                    Text('Follow the instructions to',style: TextStyle(color: Colors.white70,fontSize: 14.0,),),
+                                    Text('do your own test.',style: TextStyle(color: Colors.white70,fontSize: 14.0,),),
+                                  ],
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                ),
+                              ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Positioned(
+                          left: 0,
+                          top: -15,
+                          child: Image(image: NetworkImage('https://www.pinclipart.com/picdir/big/579-5799069_woman-nurse-guide-clipart-cartoon-nurse-png-transparent.png',),
+                            width: 100.0,
+                            height: 120.0,
+                          ),
+                        ),
+                      ],
+                    ),
                 ],
                 crossAxisAlignment: CrossAxisAlignment.start,
               ),
@@ -294,6 +344,7 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
+      backgroundColor: Colors.grey[100],
     );
   }
 }
